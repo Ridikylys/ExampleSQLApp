@@ -201,7 +201,7 @@
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.Size = new System.Drawing.Size(906, 100);
             this.TopPanel.TabIndex = 0;
-            this.TopPanel.Text = "Авторизация";
+            this.TopPanel.Text = "Регистрация";
             this.TopPanel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RegisterForm
