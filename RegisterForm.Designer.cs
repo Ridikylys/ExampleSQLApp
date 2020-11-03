@@ -1,4 +1,16 @@
-Ôªønamespace ExampleSQLApp
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+ 
+
+namespace ExampleSQLApp
 {
     partial class RegisterForm
     {
@@ -62,6 +74,7 @@
             this.MainPanel.Controls.Add(this.loginField);
             this.MainPanel.Controls.Add(this.pictureBox1);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainPanel.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainPanel.Location = new System.Drawing.Point(0, 100);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(906, 432);
@@ -91,12 +104,15 @@
             // 
             // userTelegramField
             // 
-            this.userTelegramField.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userTelegramField.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.userTelegramField.Location = new System.Drawing.Point(563, 81);
             this.userTelegramField.Multiline = true;
             this.userTelegramField.Name = "userTelegramField";
             this.userTelegramField.Size = new System.Drawing.Size(331, 48);
             this.userTelegramField.TabIndex = 6;
+            this.userTelegramField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userTelegramField.Enter += new System.EventHandler(this.userTelegramField_Enter);
+            this.userTelegramField.Leave += new System.EventHandler(this.userTelegramField_Leave);
             // 
             // userMailField
             // 
@@ -121,7 +137,7 @@
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(477, 67);
             this.buttonRegister.TabIndex = 4;
-            this.buttonRegister.Text = "–ó–∞—Ä–µ–≥–∏—Å—Ç—Ä–∏—Ä–æ–≤–∞—Ç—å—Å—è";
+            this.buttonRegister.Text = "«‡Â„ËÒÚËÓ‚‡Ú¸Òˇ";
             this.buttonRegister.UseVisualStyleBackColor = true;
             // 
             // passField
@@ -201,8 +217,10 @@
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.Size = new System.Drawing.Size(906, 100);
             this.TopPanel.TabIndex = 0;
-            this.TopPanel.Text = "–†–µ–≥–∏—Å—Ç—Ä–∞—Ü–∏—è";
+            this.TopPanel.Text = "–Â„ËÒÚ‡ˆËˇ";
             this.TopPanel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseDown);
+            this.TopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopPanel_MouseMove);
             // 
             // RegisterForm
             // 

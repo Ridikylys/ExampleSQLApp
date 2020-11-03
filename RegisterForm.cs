@@ -1,4 +1,4 @@
-п»їusing System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +16,12 @@ namespace ExampleSQLApp
         {
             InitializeComponent();
 
-            userMailField.Text = "Р’РІРµРґРёС‚Рµ РёРјСЌР№Р»";
+            userMailField.Text = "Введите имэйл";
             userMailField.ForeColor = Color.Gray;
-            loginField.Text = "Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ";
-
+            loginField.Text = "Введите логин";
+            loginField.ForeColor = Color.Gray;
+            userTelegramField.Text = "Введите ник телеграм";
+            userTelegramField.ForeColor = Color.Gray;
 
         }
 
@@ -59,7 +61,7 @@ namespace ExampleSQLApp
 
         private void userMailField_Enter(object sender, EventArgs e)
         {
-            if (userMailField.Text == "Р’РІРµРґРёС‚Рµ РёРјСЌР№Р»")
+            if (userMailField.Text == "Введите имэйл")
             {
                 userMailField.Text = "";
                 userMailField.ForeColor = Color.Black;
@@ -70,14 +72,14 @@ namespace ExampleSQLApp
         {
             if (userMailField.Text == "")
             {                 
-                userMailField.Text = "Р’РІРµРґРёС‚Рµ РёРјСЌР№Р»";
+                userMailField.Text = "Введите имэйл";
                 userMailField.ForeColor = Color.Gray;
             }
         }
 
         private void loginField_Enter(object sender, EventArgs e)
         {
-            if (loginField.Text == "Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ")
+            if (loginField.Text == "Введите логин")
             {
                 loginField.Text = "";
                 loginField.ForeColor = Color.Black;
@@ -88,11 +90,28 @@ namespace ExampleSQLApp
         {
             if (loginField.Text == "")
             {
-                loginField.Text = "Р’РІРµРґРёС‚Рµ Р»РѕРіРёРЅ";
+                loginField.Text = "Введите логин";
                 loginField.ForeColor = Color.Gray;
             }
         }
 
-      
+        private void userTelegramField_Enter(object sender, EventArgs e)
+        {
+            if (userTelegramField.Text == "Введите ник телеграм")
+            {
+                userTelegramField.Text = "";
+                userTelegramField.ForeColor = Color.Black;
+            }
+        }
+
+        private void userTelegramField_Leave(object sender, EventArgs e)
+        {
+            if (userTelegramField.Text == "")
+            {
+                userTelegramField.Text = "Введите ник телеграм";
+                userTelegramField.ForeColor = Color.Gray;
+
+            }
+        }
     }
 }
