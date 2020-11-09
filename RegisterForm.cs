@@ -1,3 +1,4 @@
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -113,5 +114,69 @@ namespace ExampleSQLApp
 
             }
         }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            if (loginField.Text == "Введите логин")
+            {
+                MessageBox.Show("Введите логин");
+                return;
+            }
+
+            if (passField.Text == "")
+            {
+                MessageBox.Show("Введите пароль");
+                return;
+            }
+
+            if (userMailField.Text == "")
+            {
+                MessageBox.Show("Введите имэйл");
+                return;
+            }
+
+            if (userMailField.Text == "Введите имэйл")
+            {
+                MessageBox.Show("Введите имэйл");
+                return;
+            }
+
+            if (userTelegramField.Text == "Введите ник телеграм")
+            {
+                MessageBox.Show("Введите ник телеграм");
+                return;
+            }
+
+            if (userTelegramField.Text == "")
+            {
+                MessageBox.Show("Введите ник телеграм");
+                return;
+            }
+
+
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `pass`, `mail`, `telegram`) VALUES (@login, @pass, @mail, @telega)", db.getConnection());
+
+            command.Parameters.Add("@login", MySqlDbType.VarChar).Value = loginField.Text;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passField.Text;
+            command.Parameters.Add("@mail", MySqlDbType.VarChar).Value = userMailField.Text;
+            command.Parameters.Add("@telega", MySqlDbType.VarChar).Value = userTelegramField.Text;
+
+            db.openConnection();
+
+            if (command.ExecuteNonQuery() == 1)
+                MessageBox.Show("Аккаунт успешно создан");
+            else
+                MessageBox.Show("Аккаунт не создан, проверьте данные");
+
+            db.closeConnection();
+        }
+        
+        public Boolean checkUser()
+        {
+
+        }
+    
     }
+
 }

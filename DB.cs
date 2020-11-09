@@ -23,8 +23,6 @@ namespace ExampleSQLApp
                 connection.Close();
         }
 
-
-
         public MySqlConnection getConnection()
         {
             return connection;

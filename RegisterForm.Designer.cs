@@ -41,9 +41,9 @@ namespace ExampleSQLApp
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.userTelegramField = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.userTelegramField = new System.Windows.Forms.TextBox();
             this.userMailField = new System.Windows.Forms.TextBox();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.passField = new System.Windows.Forms.TextBox();
@@ -64,9 +64,9 @@ namespace ExampleSQLApp
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.MainPanel.Controls.Add(this.userTelegramField);
             this.MainPanel.Controls.Add(this.pictureBox4);
             this.MainPanel.Controls.Add(this.pictureBox3);
-            this.MainPanel.Controls.Add(this.userTelegramField);
             this.MainPanel.Controls.Add(this.userMailField);
             this.MainPanel.Controls.Add(this.buttonRegister);
             this.MainPanel.Controls.Add(this.passField);
@@ -81,6 +81,19 @@ namespace ExampleSQLApp
             this.MainPanel.TabIndex = 2;
             this.MainPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseDown);
             this.MainPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainPanel_MouseMove);
+            // 
+            // userTelegramField
+            // 
+            this.userTelegramField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.userTelegramField.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userTelegramField.Location = new System.Drawing.Point(563, 81);
+            this.userTelegramField.Multiline = true;
+            this.userTelegramField.Name = "userTelegramField";
+            this.userTelegramField.Size = new System.Drawing.Size(331, 48);
+            this.userTelegramField.TabIndex = 6;
+            this.userTelegramField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.userTelegramField.Enter += new System.EventHandler(this.userTelegramField_Enter);
+            this.userTelegramField.Leave += new System.EventHandler(this.userTelegramField_Leave);
             // 
             // pictureBox4
             // 
@@ -102,18 +115,6 @@ namespace ExampleSQLApp
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             // 
-            // userTelegramField
-            // 
-            this.userTelegramField.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userTelegramField.Location = new System.Drawing.Point(563, 81);
-            this.userTelegramField.Multiline = true;
-            this.userTelegramField.Name = "userTelegramField";
-            this.userTelegramField.Size = new System.Drawing.Size(331, 48);
-            this.userTelegramField.TabIndex = 6;
-            this.userTelegramField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.userTelegramField.Enter += new System.EventHandler(this.userTelegramField_Enter);
-            this.userTelegramField.Leave += new System.EventHandler(this.userTelegramField_Leave);
-            // 
             // userMailField
             // 
             this.userMailField.Font = new System.Drawing.Font("Times New Roman", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -133,12 +134,13 @@ namespace ExampleSQLApp
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Comic Sans MS", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRegister.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonRegister.Location = new System.Drawing.Point(239, 238);
+            this.buttonRegister.Location = new System.Drawing.Point(215, 227);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(477, 67);
             this.buttonRegister.TabIndex = 4;
             this.buttonRegister.Text = "Зарегистрироваться";
             this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
             // passField
             // 

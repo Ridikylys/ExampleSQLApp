@@ -51,3 +51,4 @@ C:\Users\pawn1\Source\Repos\Ridikylys\ExampleSQLApp\obj\Debug\ExampleSQLApp.cspr
 C:\Users\pawn1\Source\Repos\Ridikylys\ExampleSQLApp\obj\Debug\ExampleSQLApp.csproj.CopyComplete
 C:\Users\pawn1\Source\Repos\Ridikylys\ExampleSQLApp\obj\Debug\ExampleSQLApp.exe
 C:\Users\pawn1\Source\Repos\Ridikylys\ExampleSQLApp\obj\Debug\ExampleSQLApp.pdb
+C:\Users\pawn1\Source\Repos\Ridikylys\ExampleSQLApp\bin\Debug\MySql.Data.dll
