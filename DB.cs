@@ -9,7 +9,7 @@ namespace ExampleSQLApp
 {
     class DB
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=root;database=binance-bot");
+        MySqlConnection connection = new MySqlConnection("server=f0486325.xsph.ru;port=3306;username=f0486325_binance-bot;password=Avifors1921680120;database=f0486325_binance-bot");
 
         public void openConnection()
         {

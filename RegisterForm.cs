@@ -153,6 +153,8 @@ namespace ExampleSQLApp
                 return;
             }
 
+            if (isUserExists())
+                return;
 
             DB db = new DB();
             MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`login`, `pass`, `mail`, `telegram`) VALUES (@login, @pass, @mail, @telega)", db.getConnection());
@@ -172,9 +174,28 @@ namespace ExampleSQLApp
             db.closeConnection();
         }
         
-        public Boolean checkUser()
+        public Boolean isUserExists()
         {
+            DB db = new DB();
 
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login` = @uL", db.getConnection());
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField.Text;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("ѕользователь с таким логином уже существует");
+                return true;
+            }
+                
+            else
+                return false;
         }
     
     }
