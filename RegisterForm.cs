@@ -28,7 +28,7 @@ namespace ExampleSQLApp
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         Point lastPoint;
@@ -197,7 +197,13 @@ namespace ExampleSQLApp
             else
                 return false;
         }
-    
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Hide(); //Закрыли старое окно
+            Login_form login_Form = new Login_form(); //Выделили память
+            login_Form.Show(); //Открыли новое окно
+        }
     }
 
 }

@@ -51,7 +51,8 @@ namespace ExampleSQLApp
             this.loginField = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.registerPanel = new System.Windows.Forms.Panel();
-            this.closeButton = new System.Windows.Forms.Label();
+            this.buttonBack = new System.Windows.Forms.PictureBox();
+            this.closeButton = new System.Windows.Forms.PictureBox();
             this.TopPanel = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -59,6 +60,8 @@ namespace ExampleSQLApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.registerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -97,7 +100,7 @@ namespace ExampleSQLApp
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::ExampleSQLApp.Properties.Resources.telegram;
+            this.pictureBox4.Image = global::ExampleSQLApp.Properties.Resources.icons8_telegram_app_96px;
             this.pictureBox4.Location = new System.Drawing.Point(507, 81);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(50, 48);
@@ -107,7 +110,7 @@ namespace ExampleSQLApp
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::ExampleSQLApp.Properties.Resources.mail;
+            this.pictureBox3.Image = global::ExampleSQLApp.Properties.Resources.icons8_gmail_96px_3;
             this.pictureBox3.Location = new System.Drawing.Point(78, 81);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 48);
@@ -128,6 +131,7 @@ namespace ExampleSQLApp
             // 
             // buttonRegister
             // 
+            this.buttonRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegister.FlatAppearance.BorderSize = 0;
             this.buttonRegister.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Highlight;
             this.buttonRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
@@ -153,7 +157,7 @@ namespace ExampleSQLApp
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::ExampleSQLApp.Properties.Resources._lock;
+            this.pictureBox2.Image = global::ExampleSQLApp.Properties.Resources.icons8_secure_96px;
             this.pictureBox2.Location = new System.Drawing.Point(507, 159);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(50, 48);
@@ -174,7 +178,7 @@ namespace ExampleSQLApp
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ExampleSQLApp.Properties.Resources.user;
+            this.pictureBox1.Image = global::ExampleSQLApp.Properties.Resources.icons8_user_96px_2;
             this.pictureBox1.Location = new System.Drawing.Point(78, 159);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 48);
@@ -185,6 +189,7 @@ namespace ExampleSQLApp
             // registerPanel
             // 
             this.registerPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.registerPanel.Controls.Add(this.buttonBack);
             this.registerPanel.Controls.Add(this.closeButton);
             this.registerPanel.Controls.Add(this.TopPanel);
             this.registerPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -193,21 +198,30 @@ namespace ExampleSQLApp
             this.registerPanel.Size = new System.Drawing.Size(906, 100);
             this.registerPanel.TabIndex = 3;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBack.Image = global::ExampleSQLApp.Properties.Resources.icons8_back_96px_3;
+            this.buttonBack.Location = new System.Drawing.Point(0, 0);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(35, 35);
+            this.buttonBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.buttonBack.TabIndex = 3;
+            this.buttonBack.TabStop = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // closeButton
             // 
-            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.closeButton.AutoSize = true;
             this.closeButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.closeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.closeButton.ForeColor = System.Drawing.Color.Snow;
-            this.closeButton.Location = new System.Drawing.Point(882, 0);
+            this.closeButton.Image = global::ExampleSQLApp.Properties.Resources.icons8_delete_96px_1;
+            this.closeButton.Location = new System.Drawing.Point(871, 0);
             this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(24, 29);
-            this.closeButton.TabIndex = 1;
-            this.closeButton.Text = "x";
-            this.closeButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.Size = new System.Drawing.Size(35, 35);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.closeButton.TabIndex = 2;
+            this.closeButton.TabStop = false;
             // 
             // TopPanel
             // 
@@ -241,7 +255,8 @@ namespace ExampleSQLApp
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.registerPanel.ResumeLayout(false);
-            this.registerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,11 +270,12 @@ namespace ExampleSQLApp
         private System.Windows.Forms.TextBox loginField;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel registerPanel;
-        private System.Windows.Forms.Label closeButton;
         private System.Windows.Forms.Label TopPanel;
         private System.Windows.Forms.TextBox userTelegramField;
         private System.Windows.Forms.TextBox userMailField;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private PictureBox closeButton;
+        private PictureBox buttonBack;
     }
 }

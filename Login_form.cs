@@ -33,7 +33,7 @@ namespace ExampleSQLApp
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         Point lastPoint;
@@ -84,10 +84,21 @@ namespace ExampleSQLApp
             adapter.Fill(table);
 
             if (table.Rows.Count > 0)
-                MessageBox.Show("Успешная авторизация");
+                { 
+                this.Hide();
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                }
             else
                 MessageBox.Show("Неверные логин/пароль");
 
+        }
+
+        private void registerLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide(); //Закрыли старое окно
+            RegisterForm registerForm = new RegisterForm(); //Выделили память
+            registerForm.Show(); //Открыли новое окно
         }
     }
 }
